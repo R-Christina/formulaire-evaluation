@@ -1,0 +1,6 @@
+@formulaire_HostAddress = http://localhost:5166
+
+GET {{formulaire_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
