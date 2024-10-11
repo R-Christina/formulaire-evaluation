@@ -30,6 +30,5 @@ namespace formulaire.Controllers
             var type_emp = _dbContext.type_emp.Where(e => e.type_emp_id == type_emp_id).ToList();
             return Ok(type_emp);
         }
-
     }
 }

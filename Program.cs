@@ -2,15 +2,18 @@ using formulaire.Data.DbContexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using System.Text.Json.Serialization;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddControllers()
-    .AddJsonOptions(options => {
-        options.JsonSerializerOptions.PropertyNamingPolicy = null;
-    });
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    // This will prevent the object cycle error
+    options.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve;
+    options.JsonSerializerOptions.WriteIndented = true; // Optional: for pretty printing the JSON
+});
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"))

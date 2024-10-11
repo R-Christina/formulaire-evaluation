@@ -135,3 +135,4 @@ D:\stage\projet\evaluation\formulaire\obj\Debug\net8.0\refint\formulaire.dll
 D:\stage\projet\evaluation\formulaire\obj\Debug\net8.0\formulaire.pdb
 D:\stage\projet\evaluation\formulaire\obj\Debug\net8.0\formulaire.genruntimeconfig.cache
 D:\stage\projet\evaluation\formulaire\obj\Debug\net8.0\ref\formulaire.dll
+D:\stage\projet\evaluation\formulaire\obj\Debug\net8.0\formulaire.sourcelink.json

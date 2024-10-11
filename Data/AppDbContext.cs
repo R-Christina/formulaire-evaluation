@@ -10,18 +10,11 @@ namespace formulaire.Data.DbContexts
         {
         }
         public DbSet<Type_emp> type_emp { get; set; }
+        public DbSet<Selection> selection { get; set; }
         public DbSet<Header_selection> header_selection { get; set; }
-        public DbSet<Form> form {get; set;}
-        public DbSet<Header_form> header_form {get; set;}
-
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Header_form>()
-            .HasOne(hf => hf.form)
-            .WithMany(f => f.header_form)
-            .HasForeignKey(hf => hf.form_id)
-            .OnDelete(DeleteBehavior.Cascade);
-
-        }
+        public DbSet<Fiche> fiche { get; set; }
+        public DbSet<Th> th { get; set; }
+        public DbSet<Td_principale> td_principale { get; set; }
+        
     }
 }
